@@ -97,10 +97,9 @@ header button a {
 .hero img {
   max-width: 1269px;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1269/645;
+  height: 645;
   object-fit: cover;
-  object-position: left bottom;
+  object-position: center;
   border-radius: 24px;
 }
 .hero .placeholder {
@@ -566,18 +565,227 @@ project-card,
 }
 
 .start-project {
-  background-image: url("../public/team-bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: left bottom;
-  height: 862px;
-}
-.start-project img {
-  max-width: 204px;
-  height: 219px;
+  font-family: "Bebas Neue Cyrillic";
   width: 100%;
-  object-fit: cover;
-  object-position: top;
+  background: url("../public/team-bg.png") no-repeat left bottom;
+  background-size: cover;
+  padding: 100px 0;
+}
+.start-project .container {
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.start-project .content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+.start-project .left-side h1 {
+  font-size: 96px;
+  line-height: 110%;
+  text-transform: uppercase;
+  margin: 0;
+}
+.start-project .right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+.start-project .right-side .header-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.start-project .right-side .header-row button {
+  width: 196px;
+  height: 49px;
+  background: #cecece;
+  border-radius: 50px;
+  border: none;
+}
+.start-project .right-side .header-row button a {
+  font-size: 30px;
+  text-decoration: none;
+  color: #000;
+}
+.start-project .right-side .header-row span {
+  font-size: 30px;
+}
+.start-project .right-side form {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+.start-project .right-side form input,
+.start-project .right-side form textarea {
+  width: 100%;
+  background: #fff;
+  border-radius: 24px;
+  border: none;
+  padding: 25px 30px;
+  box-sizing: border-box;
+  font-family: "HelveticaNeueCyr";
+  font-size: 25px;
+}
+.start-project .right-side form input {
+  height: 72px;
+}
+.start-project .right-side form textarea {
+  height: 176px;
+  resize: none;
+  border: 1px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(119.63deg, #7d9487 -7.35%, #fff 48.08%, #666 102.16%) border-box;
+}
+.start-project .right-side form .form-footer {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+.start-project .right-side form .form-footer .character-img {
+  width: 204px;
+  height: auto;
+  flex-shrink: 0;
+}
+.start-project .right-side form .form-footer .actions-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  height: 100%;
+}
+.start-project .right-side form .form-footer .actions-column button[type=submit] {
+  width: 64px;
+  height: 20px;
+  background: url("../public/team-bg.png") no-repeat center;
+  background-size: cover;
+  border-radius: 50px;
+  border: none;
+  font-size: 8px;
+  cursor: pointer;
+}
+.start-project .right-side form .agreement {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+}
+.start-project .right-side form .agreement input {
+  position: absolute;
+  opacity: 0;
+}
+.start-project .right-side form .agreement input:checked ~ .checkmark::after {
+  display: block;
+}
+.start-project .right-side form .agreement .checkmark {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #d8d8d8;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+.start-project .right-side form .agreement .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 11px;
+  top: 6px;
+  width: 7px;
+  height: 13px;
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.start-project .right-side form .agreement p {
+  font-family: "HelveticaNeueCyr";
+  font-size: 16px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .start-project .content-wrapper {
+    flex-direction: column;
+  }
+}
+footer {
+  width: 100%;
+  padding-top: 80px;
+  background-color: #fff;
+  font-family: sans-serif;
+  position: relative;
+}
+footer .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  gap: 30px;
+}
+footer .footer-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 25px 0;
+  color: #333;
+}
+footer .footer-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+footer .footer-content ul li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #a0a0a0;
+  font-size: 14px;
+}
+footer .footer-content ul li a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+footer .footer-content ul li a:hover {
+  color: #333;
+}
+footer .footer-content ul li img {
+  width: 16px;
+  height: 16px;
+}
+footer .footer-content .footer-info {
+  max-width: 420px;
+}
+footer .footer-content .footer-info p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #b0b0b0;
+  margin: 0 0 35px 0;
+}
+footer .footer-content .footer-info .mini-logo {
+  width: 32px;
+  height: auto;
+  display: block;
+}
+footer .footer-saw-wrapper {
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+footer .footer-saw-wrapper img {
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
