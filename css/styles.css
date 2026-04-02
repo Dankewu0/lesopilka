@@ -433,17 +433,6 @@ project-card,
   pointer-events: none;
 }
 
-.publication {
-  padding: clamp(40px, 5.555556vw, 80px) clamp(20px, 2.777778vw, 40px);
-}
-.publication .publication-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  gap: 24px;
-  width: min(100%, 1266px);
-  margin: 0 auto;
-}
-
 .tops {
   display: flex;
   align-items: center;
@@ -580,46 +569,66 @@ project-card,
   display: flex;
   justify-content: space-between;
   gap: 40px;
+  position: relative;
 }
-.start-project .left-side h1 {
+.start-project .content-wrapper .left-side {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.start-project .content-wrapper .left-side h1 {
   font-size: 96px;
   line-height: 110%;
   text-transform: uppercase;
   margin: 0;
+  z-index: 2;
 }
-.start-project .right-side {
+.start-project .content-wrapper .left-side .character-img {
+  width: 204px;
+  height: 249px;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.start-project .content-wrapper .right-side {
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   gap: 23px;
+  position: relative;
 }
-.start-project .right-side .header-row {
+.start-project .content-wrapper .right-side .header-row {
   display: flex;
   align-items: center;
   gap: 15px;
 }
-.start-project .right-side .header-row button {
+.start-project .content-wrapper .right-side .header-row button {
   width: 196px;
   height: 49px;
   background: #cecece;
   border-radius: 50px;
   border: none;
 }
-.start-project .right-side .header-row button a {
-  font-size: 30px;
+.start-project .content-wrapper .right-side .header-row button a {
+  font-size: 24px;
   text-decoration: none;
   color: #000;
 }
-.start-project .right-side .header-row span {
+.start-project .content-wrapper .right-side .header-row span {
   font-size: 30px;
 }
-.start-project .right-side form {
+.start-project .content-wrapper .right-side form {
   display: flex;
   flex-direction: column;
   gap: 23px;
 }
-.start-project .right-side form input,
-.start-project .right-side form textarea {
+.start-project .content-wrapper .right-side form input,
+.start-project .content-wrapper .right-side form textarea {
   width: 100%;
   background: #fff;
   border-radius: 24px;
@@ -629,79 +638,72 @@ project-card,
   font-family: "HelveticaNeueCyr";
   font-size: 25px;
 }
-.start-project .right-side form input {
+.start-project .content-wrapper .right-side form input {
   height: 72px;
 }
-.start-project .right-side form textarea {
+.start-project .content-wrapper .right-side form textarea {
   height: 176px;
   resize: none;
   border: 1px solid transparent;
   background: linear-gradient(#fff, #fff) padding-box, linear-gradient(119.63deg, #7d9487 -7.35%, #fff 48.08%, #666 102.16%) border-box;
 }
-.start-project .right-side form .form-footer {
-  display: flex;
-  align-items: flex-start;
-  gap: 30px;
-}
-.start-project .right-side form .form-footer .character-img {
-  width: 204px;
-  height: auto;
-  flex-shrink: 0;
-}
-.start-project .right-side form .form-footer .actions-column {
+.start-project .content-wrapper .right-side form .controls-column {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  justify-content: center;
-  height: 100%;
+  align-items: flex-start;
+  gap: 15px;
 }
-.start-project .right-side form .form-footer .actions-column button[type=submit] {
-  width: 64px;
-  height: 20px;
-  background: url("../public/team-bg.png") no-repeat center;
-  background-size: cover;
+.start-project .content-wrapper .right-side form .controls-column .submit-btn {
+  width: 160px;
+  height: 49px;
+  background: #cecece;
   border-radius: 50px;
   border: none;
-  font-size: 8px;
+  font-family: "HelveticaNeueCyr";
+  font-size: 16px;
   cursor: pointer;
+  margin-left: 8px;
 }
-.start-project .right-side form .agreement {
+.start-project .content-wrapper .right-side form .controls-column .agreement {
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
   position: relative;
+  margin-left: 8px;
 }
-.start-project .right-side form .agreement input {
+.start-project .content-wrapper .right-side form .controls-column .agreement input {
   position: absolute;
   opacity: 0;
 }
-.start-project .right-side form .agreement input:checked ~ .checkmark::after {
+.start-project .content-wrapper .right-side form .controls-column .agreement input:checked ~ .checkmark::after {
   display: block;
 }
-.start-project .right-side form .agreement .checkmark {
+.start-project .content-wrapper .right-side form .controls-column .agreement .checkmark {
   width: 34px;
   height: 34px;
-  border: 1px solid #d8d8d8;
+  border: 1px solid #a0a0a0;
   border-radius: 50%;
   position: relative;
   flex-shrink: 0;
+  box-sizing: border-box;
 }
-.start-project .right-side form .agreement .checkmark::after {
+.start-project .content-wrapper .right-side form .controls-column .agreement .checkmark::after {
   content: "";
   position: absolute;
   display: none;
-  left: 11px;
+  left: 9px;
   top: 6px;
-  width: 7px;
-  height: 13px;
+  width: 8px;
+  height: 14px;
   border: solid #000;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
-.start-project .right-side form .agreement p {
+.start-project .content-wrapper .right-side form .controls-column .agreement p {
   font-family: "HelveticaNeueCyr";
   font-size: 16px;
+  line-height: 1.2;
   margin: 0;
 }
 
@@ -786,6 +788,153 @@ footer .footer-saw-wrapper img {
   object-fit: contain;
   user-select: none;
   pointer-events: none;
+}
+
+.publication {
+  height: 879px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.publication h1 {
+  margin: 0 0 20px 0;
+  font-size: clamp(28px, 4vw, 48px);
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+.publication .card-section-publication {
+  display: flex;
+  gap: 33px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.publication .card-section-publication .card {
+  flex: 0 0 380px;
+  height: 399px;
+  display: flex;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+}
+.publication .card-section-publication .card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 24px;
+  background: linear-gradient(119.63deg, #7d9487 -7.35%, #ffffff 48.08%, #666666 102.16%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.publication .card-section-publication .card .left-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+}
+.publication .card-section-publication .card .left-side .text h2 {
+  margin: 0;
+  font-size: clamp(20px, 2.5vw, 24px);
+  font-weight: bold;
+  text-align: left;
+}
+.publication .card-section-publication .card .left-side .text p {
+  margin: 0;
+  font-size: clamp(14px, 2vw, 16px);
+  text-align: left;
+}
+.publication .card-section-publication .card .left-side button {
+  width: 155px;
+  height: 48px;
+  border-radius: 60px;
+  border: 2px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(119.63deg, #7d9487 -7.35%, #ffffff 48.08%, #666666 102.16%) border-box;
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 500;
+  cursor: pointer;
+  align-self: flex-start;
+}
+.publication .card-section-publication .card .right-side {
+  flex: 1;
+  min-width: 300px;
+  overflow: hidden;
+}
+.publication .card-section-publication .card .right-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
+  display: block;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+.publication .more-btn-wrapper {
+  margin-top: 24px;
+  text-align: right;
+}
+.publication .more-btn-wrapper .more-btn {
+  background: #d5d5d5;
+  border: 2px solid transparent;
+  border-radius: 60px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.publication .more-btn-wrapper .more-btn .arrow {
+  font-size: 18px;
+}
+
+.team,
+.hero,
+.philosophy,
+.history,
+.publication {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.team h1,
+.hero h1,
+.philosophy h1,
+.history h1,
+.publication h1 {
+  font-size: clamp(32px, 5vw, 96px);
+}
+.team h2,
+.hero h2,
+.philosophy h2,
+.history h2,
+.publication h2 {
+  font-size: clamp(24px, 4vw, 48px);
+}
+.team h3,
+.hero h3,
+.philosophy h3,
+.history h3,
+.publication h3 {
+  font-size: clamp(20px, 3.5vw, 32px);
+}
+.team p,
+.hero p,
+.philosophy p,
+.history p,
+.publication p {
+  font-size: clamp(16px, 2.5vw, 28px);
+  line-height: 1.3;
 }
 
 /*# sourceMappingURL=styles.css.map */
