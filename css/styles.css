@@ -5,71 +5,108 @@
 }
 
 body {
-  display: flex;
   margin: 0;
   padding: 0;
+}
+
+.container {
+  display: flex;
   flex-wrap: wrap;
-}
-
-main {
   width: 100%;
-}
-
-img {
-  display: block;
   max-width: 100%;
 }
 
 @font-face {
   font-family: "HelveticaNeueCyr";
-  src: url("../fonts/HelveticaNeueCyr-Roman.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-Roman.woff") format("woff");
+  src: url("../fonts/HelveticaNeueCyr/helveticaneuecyr_roman.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
+  font-family: "HelveticaNeueCyr";
+  src: url("../fonts/HelveticaNeueCyr/helveticaneuecyr_black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HelveticaNeueCyr";
+  src: url("../fonts/HelveticaNeueCyr/helveticaneuecyr_thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HelveticaNeueCyr";
+  src: url("../fonts/HelveticaNeueCyr/helveticaneuecyr_ultralight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HelveticaNeueCyr";
+  src: url("../fonts/HelveticaNeueCyr/helveticaneuecyr_ultralightitalic.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
   font-family: "Bebas Neue Cyrillic";
-  src: url("../fonts/BebasNeueCyrillic-Regular.woff2") format("woff2"), url("../fonts/BebasNeueCyrillic-Regular.woff") format("woff");
+  src: url("../fonts/BebasNeueCyrillic/bebas-neue-cyrillic.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
 header {
   display: flex;
-  width: 100%;
-  min-height: 100px;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 20px clamp(20px, 2.777778vw, 40px);
+  padding: 10px clamp(10px, 2vw, 40px);
   font-family: "HelveticaNeueCyr", sans-serif;
-  flex-wrap: wrap;
 }
 header ul {
   display: flex;
-  flex-direction: row;
-  list-style: none;
+  gap: clamp(10px, 2vw, 20px);
   margin: 0;
   padding: 0;
-  gap: 20px;
+  list-style: none;
+  flex: 1;
+  min-width: 0;
+  flex-wrap: wrap;
 }
-header a {
+header ul a {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
   color: #bbbbbb;
-  font-size: 16px;
+  font-size: clamp(14px, 1.5vw, 16px);
   text-decoration: none;
 }
-header button {
+header .btn {
   border: none;
+  font-family: "HelveticaNeueCyr", sans-serif;
+  font-weight: 400;
   background: linear-gradient(to right, #aaaaaa, #c8c8c8);
-  width: 100%;
-  max-width: 155px;
-  height: auto;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 50px;
-}
-header button a {
   color: white;
+  text-decoration: none;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .hero {
@@ -81,7 +118,7 @@ header button a {
   justify-content: center;
   text-align: center;
   min-height: 100vh;
-  padding: clamp(32px, 4.444444vw, 64px) clamp(20px, 2.777778vw, 40px);
+  padding: clamp(32px, 4vw, 56px) clamp(20px, 2.777778vw, 40px);
 }
 .hero .svg {
   width: 100%;
@@ -91,6 +128,7 @@ header button a {
 }
 .hero p {
   font-family: "HelveticaNeueCyr", sans-serif;
+  font-weight: 400;
   font-size: 18px;
   color: #bbbbbb;
 }
@@ -111,44 +149,50 @@ header button a {
 }
 
 .philosophy {
-  min-height: min(53.125vw, 765px);
-  margin: 0;
-  padding: clamp(64px, 6.944444vw, 100px) clamp(20px, 2.777778vw, 40px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-weight: 400;
+  padding: clamp(64px, 6.944444vw, 100px) clamp(20px, 2.777778vw, 40px);
+  min-height: min(53.125vw, 765px);
+}
+.philosophy * {
+  font-family: inherit;
 }
 .philosophy h1 {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
-  font-weight: 400;
-  font-size: 24px !important;
+  font-size: clamp(12px, 2vw, 24px);
   text-transform: uppercase;
-  margin: 0 0 24px;
-  word-break: break-word;
+  margin: 0 0 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: #0c0c0c;
 }
 .philosophy p {
-  font-family: "Bebas Neue Cyrillic", sans-serif;
-  font-weight: 400;
-  font-size: 48px !important;
-  line-height: 1.2;
+  display: block;
+  font-size: clamp(16px, 4vw, 48px);
+  line-height: 1.4;
   text-transform: uppercase;
-  color: #000;
+  color: #0c0c0c;
   margin: 0 auto;
+  text-align: center;
 }
 .philosophy p .line {
   display: block;
-  width: 100%;
-  white-space: normal;
-  word-break: break-word;
-  text-align: center;
+  margin-bottom: clamp(10px, 1vw, 16px);
+  color: #0c0c0c;
 }
 .philosophy p .line .muted {
   color: #808080;
 }
 
 .products-and-soluction {
+  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-weight: 400;
   padding: clamp(40px, 5.555556vw, 80px) clamp(20px, 2.777778vw, 40px);
   display: flex;
   flex-direction: column;
@@ -157,8 +201,6 @@ header button a {
   overflow: hidden;
   min-height: min(85.902778vw, 1237px);
   background: #d5d5d5;
-  font-family: "Bebas Neue Cyrillic", sans-serif;
-  font-weight: 400;
 }
 .products-and-soluction::before, .products-and-soluction::after {
   content: "";
@@ -254,6 +296,13 @@ header button a {
   padding-bottom: 12px;
   scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
+}
+.team .cards::-webkit-scrollbar {
+  display: none;
+}
+.team .cards {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .team .cards > section {
   flex: 0 0 calc((100% - 99px) / 4);
