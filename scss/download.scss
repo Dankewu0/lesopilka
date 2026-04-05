@@ -1,0 +1,62 @@
+.brief {
+  padding: 130px 0 100px;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    max-width: 1340px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    h2 {
+      font-family: "Bebas Neue Cyrillic";
+      font-size: 96px;
+      line-height: 110%;
+      text-transform: uppercase;
+      margin: 0 0 40px 0;
+    }
+  }
+
+  .brief-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+
+    article {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.01);
+      position: relative;
+
+      span {
+        font-family: "Bebas Neue Cyrillic";
+        font-size: 32px;
+        line-height: 110%;
+        text-transform: uppercase;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 16px;
+        border-radius: 50px;
+        background: #cecece;
+        text-decoration: none;
+        font-family: "HelveticaNeueCyr";
+        font-size: 16px;
+        letter-spacing: 0.04em;
+        color: #000;
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}

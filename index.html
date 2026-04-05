@@ -27,7 +27,7 @@
     <main>
       <section class="hero">
         <img class="svg" src="public/lesopilka.svg" alt="lesopilka" />
-        <p>текст текст текст</p>
+        <span>текст текст текст</span>
         <div>
           <img src="public/lesopilka_homepage.png" alt="lesopilka" />
         </div>
@@ -108,18 +108,20 @@
         </div>
       </section>
       <section class="history">
-        <h1>История</h1>
-        <p>
-          <span>КОРОТКАЯ ИСТОРИЯ</span>
-          <span class="history-muted"
-            >Lorem ipsum dolor sit amet, consectetur <br />
-            adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur.
-          </span>
-        </p>
+        <section class="container">
+          <h1>История</h1>
+          <p>
+            <span>КОРОТКАЯ ИСТОРИЯ</span>
+            <span class="history-muted"
+              >Lorem ipsum dolor sit amet, consectetur <br />
+              adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur.
+            </span>
+          </p>
+        </section>
       </section>
       <section class="team">
         <h1>Команда</h1>
@@ -222,27 +224,44 @@
         <div class="container">
           <div class="content-wrapper">
             <div class="left-side">
-              <h1>Начать<br />совместный<br />проект</h1>
+              <h1>Начать совместный проект</h1>
               <img
                 src="public/scarlett.png"
-                alt="scarlett"
+                alt="Scarlett"
                 class="character-img"
               />
             </div>
 
             <div class="right-side">
               <div class="header-row">
-                <button>
-                  <a href="" download="document.pdf">Скачать бриф</a>
-                </button>
+                <a href="download" class="download-btn">
+                  <img src="public/download.svg" alt="" />
+                  Скачать бриф
+                </a>
                 <span>или заполнить форму</span>
               </div>
 
-              <form>
-                <input type="text" placeholder="Имя" />
-                <input type="tel" placeholder="Телефон" />
-                <input type="email" placeholder="Email" />
+              <form class="project-form">
+                <input
+                  type="text"
+                  name="name"
+                  autocomplete="name"
+                  placeholder="Имя"
+                />
+                <input
+                  type="tel"
+                  name="tel"
+                  autocomplete="tel"
+                  placeholder="Телефон"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="Email"
+                />
                 <textarea
+                  name="message"
                   placeholder="Расскажите, какой у вас запрос"
                 ></textarea>
 
@@ -252,10 +271,10 @@
                   <label class="agreement">
                     <input type="checkbox" checked />
                     <span class="checkmark"></span>
-                    <p>
+                    <span>
                       Нажимая на кнопку, я соглашаюсь передать персональные
                       данные для обработки ИП Абустина Н.С
-                    </p>
+                    </span>
                   </label>
                 </div>
               </form>

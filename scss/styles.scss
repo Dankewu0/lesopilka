@@ -62,7 +62,6 @@ body {
     format("truetype");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
@@ -91,11 +90,8 @@ header {
   ul {
     display: flex;
     gap: clamp(10px, 2vw, 20px);
-    margin: 0;
-    padding: 0;
     list-style: none;
     flex: 1;
-    min-width: 0;
     flex-wrap: wrap;
 
     a {
@@ -149,7 +145,7 @@ header {
   img {
     max-width: 1269px;
     width: 100%;
-    height: 645;
+    height: 645px;
     object-fit: cover;
     object-position: center;
     border-radius: 24px;
@@ -162,7 +158,6 @@ header {
     border-radius: 24px;
   }
 }
-
 .philosophy {
   display: flex;
   flex-direction: column;
@@ -174,10 +169,6 @@ header {
   padding: clamp(64px, 6.944444vw, 100px) clamp(20px, 2.777778vw, 40px);
   min-height: min(53.125vw, 765px);
 
-  * {
-    font-family: inherit;
-  }
-
   h1 {
     font-size: clamp(12px, 2vw, 24px);
     text-transform: uppercase;
@@ -188,7 +179,6 @@ header {
     width: 100%;
     color: #0c0c0c;
   }
-
   p {
     display: block;
     font-size: clamp(16px, 4vw, 48px);
@@ -197,12 +187,10 @@ header {
     color: #0c0c0c;
     margin: 0 auto;
     text-align: center;
-
     .line {
       display: block;
       margin-bottom: clamp(10px, 1vw, 16px);
       color: #0c0c0c;
-
       .muted {
         color: #808080;
       }
@@ -222,41 +210,15 @@ header {
   min-height: min(85.902778vw, 1237px);
   background: #d5d5d5;
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 2600px;
-    height: 132px;
-    background: #ffffff;
-    opacity: 1;
-    filter: blur(100px);
-    left: 50%;
-    transform: translateX(-50%) rotate(31.65deg);
-    transform-origin: center;
-    pointer-events: none;
-  }
-
-  &::before {
-    top: 600px;
-  }
-
-  &::after {
-    top: 1000px;
-  }
-
   h1 {
     position: relative;
     z-index: 1;
     width: min(100%, 1266px);
-    margin: 0 0 24px;
+    margin: 0 0 40px;
     font-size: clamp(48px, 6.666667vw, 96px);
     text-transform: uppercase;
-    font-family: inherit;
-    font-weight: 400;
     text-align: left;
-    margin-bottom: 40px;
+    font-weight: 400;
   }
 
   .products-grid {
@@ -270,97 +232,101 @@ header {
     > * {
       flex: 1 1 300px;
       min-width: 300px;
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+      &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      }
     }
   }
 
   .products-blur {
-    position: absolute;
-    width: 1348.36px;
-    height: 805.58px;
-    left: -405.51px;
-    top: -226px;
-    background: #ffffff;
-    filter: blur(215px);
-    transform: rotate(35.52deg);
-    pointer-events: none;
-    z-index: 0;
+    display: none;
   }
 }
-
 .team {
   width: 100%;
-  max-width: 100%;
-  height: auto;
-  min-height: min(66.805556vw, 962px);
+  min-height: 600px;
   background-image: url("../public/team-bg.png");
   background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: left bottom;
+  background-size: cover;
+  background-position: center bottom;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: clamp(64px, 6.666667vw, 96px) clamp(20px, 2.777778vw, 40px);
+  padding: clamp(64px, 6vw, 96px) clamp(20px, 2.7vw, 40px);
+  font-family: "Bebas Neue Cyrillic", sans-serif;
 
   h1 {
-    position: relative;
-    z-index: 1;
-    width: min(100%, 1266px);
-    margin: 0 0 40px;
-    font-family: "Bebas Neue Cyrillic", sans-serif;
-    font-size: clamp(48px, 6.666667vw, 96px);
+    font-size: clamp(48px, 6vw, 96px);
     font-weight: 400;
     line-height: 1;
     text-transform: uppercase;
+    margin-bottom: clamp(40px, 5vw, 60px);
+    width: 100%;
+    max-width: 1266px;
     text-align: left;
   }
 
   .cards {
     display: flex;
-    flex-direction: row;
-    width: min(100%, 1284px);
-    gap: 33px;
+    gap: clamp(20px, 3vw, 33px);
     overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 12px;
-    scroll-snap-type: x proximity;
+    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    width: 100%;
+    max-width: 1284px;
+    padding-bottom: 12px;
+
     &::-webkit-scrollbar {
       display: none;
     }
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    > section {
-      flex: 0 0 calc((100% - 99px) / 4);
-      min-width: 240px;
-      scroll-snap-align: start;
-    }
 
-    img {
-      width: 100%;
-      aspect-ratio: 296.25 / 362;
+    > section {
+      flex: 0 0 min(250px, 25%);
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #fff;
       border-radius: 24px;
-      object-fit: cover;
-      object-position: left bottom;
-    }
-    .placeholder {
-      width: 100%;
-      aspect-ratio: 296.25 / 362;
-      border-radius: 24px;
-      background: #e4e4e4;
-    }
-    h1 {
-      font-size: 32px;
-      width: 100%;
-      margin: 20px 0 8px;
-    }
-    p {
-      font-size: 16px;
-      margin: 0;
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.25s ease;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+
+      img,
+      .placeholder {
+        width: 100%;
+        aspect-ratio: 296.25 / 362;
+        border-radius: 24px;
+        object-fit: cover;
+        object-position: left bottom;
+        background: #e4e4e4;
+      }
+
+      h1 {
+        font-size: clamp(20px, 4vw, 32px);
+        margin: 12px 0 4px;
+      }
+
+      p {
+        font-size: clamp(14px, 3vw, 16px);
+        margin: 0;
+        color: rgba(0, 0, 0, 0.6);
+      }
     }
   }
 }
 .history {
+  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-weight: 400;
   width: 100%;
   padding: clamp(40px, 5.555556vw, 80px) clamp(20px, 2.777778vw, 40px);
   display: flex;
@@ -390,13 +356,14 @@ header {
 
     span {
       display: inline;
+
       &.history-muted {
         color: #808080;
       }
     }
   }
 }
-project-card,
+.project-card,
 .project-card-host {
   display: block;
   width: 100%;
@@ -427,119 +394,119 @@ project-card,
     transform 0.25s ease,
     box-shadow 0.25s ease;
   transform: translateZ(0);
-}
 
-.project-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  border-radius: 24px;
-  padding: 1px;
-  background: linear-gradient(
-    119.63deg,
-    #7d9487 -7.35%,
-    #ffffff 48.08%,
-    #666666 102.16%
-  );
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  pointer-events: none;
-}
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: 24px;
+    padding: 1px;
+    background: linear-gradient(
+      119.63deg,
+      #7d9487 -7.35%,
+      #ffffff 48.08%,
+      #666666 102.16%
+    );
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
 
-.project-card::before {
-  display: none;
-}
-
-.project-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-}
-
-.project-card h3 {
-  position: relative;
-  z-index: 2;
-  margin: 0;
-  color: #000000;
-  font-family: "Bebas Neue Cyrillic", sans-serif;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 110%;
-  text-transform: uppercase;
-}
-
-.project-card p {
-  position: relative;
-  z-index: 2;
-  margin: 8px 0 0;
-  color: rgba(0, 0, 0, 0.6);
-  font-family: "HelveticaNeueCyr", sans-serif;
-  font-size: 16px;
-  line-height: 140%;
-}
-
-.project-card img {
-  position: absolute;
-  left: clamp(24px, 2.777778vw, 40px);
-  top: 105.5px;
-  z-index: 0;
-  width: min(83.251232%, 338px);
-  height: auto;
-  aspect-ratio: 338 / 364;
-  object-fit: cover;
-}
-
-.project-card button {
-  position: relative;
-  z-index: 2;
-  margin-top: auto;
-  padding: 10px 24px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid transparent;
-  border-radius: 50px;
-  font-family: "HelveticaNeueCyr", sans-serif;
-  font-size: 14px;
-  color: #000;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  overflow: hidden;
+  &::before {
+    display: none;
+  }
 
   &:hover {
-    background: rgba(255, 255, 255, 0.14);
+    transform: scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
   }
-}
 
-.project-card button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 1px;
-  border-radius: 50px;
-  background: linear-gradient(
-    95.06deg,
-    rgba(93, 93, 93, 0.42) -7.2%,
-    rgba(255, 255, 255, 0.42) 39.29%,
-    rgba(102, 102, 102, 0.42) 85.78%
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  pointer-events: none;
+  h3 {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    color: #000000;
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    text-transform: uppercase;
+  }
+
+  p {
+    position: relative;
+    z-index: 2;
+    margin: 8px 0 0;
+    color: rgba(0, 0, 0, 0.6);
+    font-family: "HelveticaNeueCyr", sans-serif;
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  img {
+    position: absolute;
+    left: clamp(24px, 2.777778vw, 40px);
+    top: 105.5px;
+    z-index: 0;
+    width: min(83.251232%, 338px);
+    height: auto;
+    aspect-ratio: 338 / 364;
+    object-fit: cover;
+  }
+
+  button {
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    padding: 10px 24px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid transparent;
+    border-radius: 50px;
+    font-family: "HelveticaNeueCyr", sans-serif;
+    font-size: 14px;
+    color: #000;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    overflow: hidden;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 1px;
+      border-radius: 50px;
+      background: linear-gradient(
+        95.06deg,
+        rgba(93, 93, 93, 0.42) -7.2%,
+        rgba(255, 255, 255, 0.42) 39.29%,
+        rgba(102, 102, 102, 0.42) 85.78%
+      );
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+  }
 }
 
 .tops {
@@ -602,59 +569,60 @@ project-card,
   }
 }
 .clients-about {
-  height: 1024px;
+  min-height: 100vh;
   background-image: url("../public/clients-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
   font-family: "HelveticaNeueCyr", sans-serif;
-  padding: 158px 85px;
+  padding: clamp(40px, 10vw, 158px) clamp(20px, 5vw, 85px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   h1 {
     text-transform: uppercase;
-    font-size: 96px;
+    font-size: clamp(12px, 8vw, 96px);
+    margin-bottom: clamp(16px, 3vw, 32px);
+    flex-wrap: wrap;
   }
   p {
     margin: 0;
-    padding: 0 30px;
+    padding: 0 0 0 clamp(10px, 2vw, 30px);
     max-width: 670px;
-    height: 392px;
-    font-size: 40px;
-  }
-  span {
-    color: #666666;
-  }
-  p,
-  span {
+    height: auto;
+    font-size: clamp(16px, 4.5vw, 40px);
     font-family: "HelveticaNeueCyr", sans-serif;
     font-weight: 400;
     font-style: normal;
     text-transform: capitalize;
+    span {
+      color: #666666;
+      font-size: inherit;
+    }
   }
   h2 {
-    font-size: 18px;
+    font-size: clamp(16px, 2.5vw, 24px);
+    margin: 0;
   }
   .org-name {
     margin: 0;
     padding: 0;
     max-width: none;
     height: auto;
-    font-size: 18px;
+    font-size: clamp(12px, 1.8vw, 18px);
     color: #878c91;
+    text-transform: none;
   }
   .from {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 12px;
-    margin-top: 24px;
-    margin-left: 30px;
-
+    margin-top: clamp(20px, 5vw, 40px);
+    margin-left: clamp(10px, 2vw, 30px);
     img {
-      width: 70px;
-      height: 70px;
+      width: clamp(40px, 8vw, 70px);
+      height: clamp(40px, 8vw, 70px);
       flex: 0 0 auto;
     }
   }
@@ -664,7 +632,6 @@ project-card,
     gap: 4px;
   }
 }
-
 .start-project {
   font-family: "Bebas Neue Cyrillic";
   width: 100%;
@@ -672,10 +639,35 @@ project-card,
   background-size: cover;
   padding: 100px 0;
 
-  .container {
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     width: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
+    max-width: 155px;
+    min-width: 120px;
+    height: 48px;
+    padding: 0 12px;
+    background: #cecece;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: "HelveticaNeueCyr";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+    color: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    img {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
   }
 
   .content-wrapper {
@@ -717,28 +709,17 @@ project-card,
       justify-content: flex-end;
       gap: 23px;
       position: relative;
+      font-family: "HelveticaNeueCyr";
 
       .header-row {
         display: flex;
         align-items: center;
         gap: 15px;
 
-        button {
-          width: 196px;
-          height: 49px;
-          background: #cecece;
-          border-radius: 50px;
-          border: none;
-
-          a {
-            font-size: 24px;
-            text-decoration: none;
-            color: #000;
-          }
-        }
-
         span {
-          font-size: 30px;
+          font-size: 16px;
+          font-weight: 400;
+          font-style: normal;
         }
       }
 
@@ -750,13 +731,18 @@ project-card,
         input,
         textarea {
           width: 100%;
-          background: #fff;
           border-radius: 24px;
           border: none;
           padding: 25px 30px;
           box-sizing: border-box;
           font-family: "HelveticaNeueCyr";
           font-size: 25px;
+          color: #000;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+          color: #aaaaaa;
         }
 
         input {
@@ -791,9 +777,8 @@ project-card,
             border-radius: 50px;
             border: none;
             font-family: "HelveticaNeueCyr";
-            font-size: 16px;
+            font-size: 20px;
             cursor: pointer;
-            margin-left: 8px;
           }
 
           .agreement {
@@ -802,7 +787,6 @@ project-card,
             gap: 10px;
             cursor: pointer;
             position: relative;
-            margin-left: 8px;
 
             input {
               position: absolute;
@@ -826,21 +810,21 @@ project-card,
                 content: "";
                 position: absolute;
                 display: none;
-                left: 9px;
-                top: 6px;
+                left: 50%;
+                top: 50%;
                 width: 8px;
                 height: 14px;
                 border: solid #000;
                 border-width: 0 2px 2px 0;
-                transform: rotate(45deg);
+                transform: translate(-50%, -50%) rotate(45deg);
               }
             }
 
-            p {
+            span {
               font-family: "HelveticaNeueCyr";
               font-size: 16px;
+              color: #000000;
               line-height: 1.2;
-              margin: 0;
             }
           }
         }
@@ -848,11 +832,7 @@ project-card,
     }
   }
 }
-@media (max-width: 900px) {
-  .start-project .content-wrapper {
-    flex-direction: column;
-  }
-}
+
 footer {
   width: 100%;
   padding-top: 80px;
@@ -1079,14 +1059,4 @@ footer {
       }
     }
   }
-}
-
-.team,
-.hero,
-.philosophy,
-.history,
-.publication {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
 }
