@@ -1,0 +1,77 @@
+.clients-about {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: url("../public/clients-bg.png") no-repeat center / cover;
+  font-family: "HelveticaNeueCyr", sans-serif;
+  padding: clamp(40px, 10vw, 158px) clamp(20px, 5vw, 85px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1206px;
+  }
+
+  h1 {
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+    text-transform: uppercase;
+    font-size: clamp(48px, 8vw, 96px);
+    margin-bottom: clamp(16px, 3vw, 32px);
+    width: 100%;
+  }
+
+  p {
+    margin: 0;
+    padding: 0 0 0 clamp(0px, 2vw, 30px);
+    max-width: 670px;
+    font-size: clamp(20px, 4vw, 40px);
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+
+    span {
+      color: #666666;
+      font-size: inherit;
+    }
+  }
+
+  h2 {
+    font-size: clamp(14px, 1.5vw, 18px);
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+  }
+
+  .org-name {
+    margin: 0;
+    padding: 0;
+    font-size: clamp(12px, 1.2vw, 18px);
+    font-family: Helvetica, Arial, sans-serif;
+    color: #878c91;
+  }
+
+  .from {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: clamp(20px, 5vw, 40px);
+    margin-left: clamp(0px, 2vw, 30px);
+
+    img {
+      width: clamp(40px, 8vw, 70px);
+      height: clamp(40px, 8vw, 70px);
+      flex: 0 0 auto;
+    }
+
+    .name {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
+}

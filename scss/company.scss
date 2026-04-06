@@ -1,0 +1,43 @@
+.company {
+  min-height: 174px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  .company-track {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: max-content;
+    will-change: transform;
+    flex-shrink: 0;
+  }
+
+  img {
+    flex: 0 0 auto;
+    height: 40px;
+  }
+
+  .mfti {
+    width: 133px;
+  }
+
+  .four {
+    width: 102px;
+  }
+
+  .tok-gifts {
+    width: 154px;
+  }
+
+  .vciom {
+    width: 49px;
+  }
+
+  .applepodcasts {
+    width: 109px;
+  }
+}

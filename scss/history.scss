@@ -1,0 +1,40 @@
+.history {
+  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-weight: 400;
+  width: 100%;
+  padding: clamp(40px, 5.555556vw, 80px) clamp(20px, 2.777778vw, 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 862px;
+  gap: 10px;
+  h1 {
+    font-size: clamp(12px, 4vw, 24px);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .history-text {
+    font-size: clamp(24px, 4vw, 48px);
+    font-weight: 400;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #808080;
+    margin: 0;
+    text-align: center;
+
+    .history-highlight {
+      color: #000;
+    }
+  }
+}

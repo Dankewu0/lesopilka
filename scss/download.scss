@@ -1,42 +1,54 @@
 .brief {
   padding: 130px 0 100px;
-  display: flex;
-  justify-content: center;
+  width: 100%;
 
   .container {
-    max-width: 1340px;
-    width: 100%;
+    max-width: 1206px;
+    margin: 0 auto;
     padding: 0 20px;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    h2 {
-      font-family: "Bebas Neue Cyrillic";
-      font-size: 96px;
-      line-height: 110%;
-      text-transform: uppercase;
-      margin: 0 0 40px 0;
-    }
+  h2 {
+    font-family: "Bebas Neue Cyrillic";
+    font-size: 96px;
+    line-height: 110%;
+    text-transform: uppercase;
+    margin: 0 0 60px 0;
+    padding: 0;
+    text-align: left;
+    white-space: nowrap;
+    width: fit-content;
   }
 
   .brief-grid {
     display: flex;
-    flex-direction: column;
-    gap: 33px;
+    flex-wrap: wrap;
+    gap: 40px 33px;
+    width: 100%;
 
     article {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 30px;
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.01);
-      position: relative;
+      padding-bottom: 15px;
+      border-bottom: 1px solid;
+      border-image-source: linear-gradient(90deg, #ffffff 0%, #999999 100%);
+      border-image-slice: 1;
+
+      flex: 1 1 300px;
+      max-width: 380px;
+      gap: 15px;
 
       span {
         font-family: "Bebas Neue Cyrillic";
         font-size: 32px;
         line-height: 110%;
         text-transform: uppercase;
+        color: #000;
+        white-space: nowrap;
       }
 
       a {
@@ -49,14 +61,32 @@
         text-decoration: none;
         font-family: "HelveticaNeueCyr";
         font-size: 16px;
-        letter-spacing: 0.04em;
         color: #000;
+        flex-shrink: 0;
 
         img {
           width: 24px;
           height: 24px;
         }
       }
+    }
+  }
+}
+
+@media (min-width: 1150px) {
+  .brief .brief-grid article:nth-child(n + 4) {
+    transform: translateX(-150px);
+  }
+}
+
+@media (max-width: 600px) {
+  .brief {
+    h2 {
+      font-size: 48px;
+    }
+    .brief-grid article span {
+      font-size: 24px;
+      white-space: normal;
     }
   }
 }

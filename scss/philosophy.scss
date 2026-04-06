@@ -1,0 +1,46 @@
+.philosophy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-weight: 400;
+  padding: clamp(64px, 6.944444vw, 100px) clamp(20px, 2.777778vw, 40px);
+  min-height: min(53.125vw, 765px);
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  h1 {
+    font-size: clamp(12px, 2vw, 24px);
+    text-transform: uppercase;
+    margin: 0 0 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #0c0c0c;
+  }
+  p {
+    display: block;
+    font-size: clamp(16px, 4vw, 48px);
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: #0c0c0c;
+    margin: 0 auto;
+    text-align: center;
+    .line {
+      display: block;
+      margin-bottom: clamp(10px, 1vw, 16px);
+      color: #0c0c0c;
+      .muted {
+        color: #808080;
+      }
+    }
+  }
+}

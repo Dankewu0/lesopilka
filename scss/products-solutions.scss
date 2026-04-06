@@ -1,0 +1,55 @@
+.products-and-soluction {
+  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-weight: 400;
+  padding: clamp(40px, 5.555556vw, 80px) clamp(20px, 2.777778vw, 40px);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  min-height: min(85.902778vw, 1237px);
+  background: #d5d5d5;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  h1 {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 1266px);
+    margin: 0 0 40px;
+    font-size: clamp(48px, 6.666667vw, 96px);
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 400;
+  }
+
+  .products-grid {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    width: min(100%, 1266px);
+
+    > * {
+      flex: 1 1 300px;
+      min-width: 300px;
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+      &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      }
+    }
+  }
+
+  .products-blur {
+    display: none;
+  }
+}

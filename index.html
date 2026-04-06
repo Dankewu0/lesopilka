@@ -9,7 +9,7 @@
 
   <body>
     <header>
-      <section class="container">
+      <div class="container">
         <nav>
           <ul>
             <li><a href="#" aria-current="page">Главная</a></li>
@@ -21,27 +21,31 @@
             <li><a href="#">Контакты</a></li>
           </ul>
         </nav>
-      </section>
+      </div>
       <a href="tel:+79990000000" class="btn">Связаться</a>
     </header>
     <main>
       <section class="hero">
-        <img class="svg" src="public/lesopilka.svg" alt="lesopilka" />
-        <span>текст текст текст</span>
-        <div>
-          <img src="public/lesopilka_homepage.png" alt="lesopilka" />
+        <div class="container">
+          <img class="svg" src="public/lesopilka.svg" alt="lesopilka" />
+          <p>текст текст текст</p>
+          <div>
+            <img src="public/lesopilka_homepage.png" alt="lesopilka" />
+          </div>
         </div>
       </section>
       <section class="company">
-        <img src="public/mfti.png" alt="company" class="mfti" />
-        <img src="public/1435.png" alt="company" class="four" />
-        <img src="public/tok-gifts.png" alt="company" class="tok-gifts" />
-        <img src="public/company.svg" alt="company" class="vciom" />
-        <img
-          src="public/applepodcasts.png"
-          alt="company"
-          class="applepodcasts"
-        />
+        <div class="container">
+          <img src="public/mfti.png" alt="MFTI" class="mfti" />
+          <img src="public/1435.png" alt="1435" class="four" />
+          <img src="public/tok-gifts.png" alt="TOK Gifts" class="tok-gifts" />
+          <img src="public/company.svg" alt="VCIOM" class="vciom" />
+          <img
+            src="public/applepodcasts.png"
+            alt="Apple Podcasts"
+            class="applepodcasts"
+          />
+        </div>
       </section>
       <section class="philosophy">
         <div class="container">
@@ -66,92 +70,94 @@
         </div>
       </section>
       <section class="products-and-soluction">
-        <div class="products-blur" aria-hidden="true"></div>
-        <h1>Продукты и решения</h1>
-        <div class="products-grid">
-          <section class="project-card">
-            <h3>pr и коммуникации</h3>
-            <p>Lorem ipsum dolor sit amet</p>
-            <img src="public/pr.png" alt="pr и коммуникации" />
-            <button>подробнее</button>
-          </section>
-          <section class="project-card">
-            <h3>подкасты</h3>
-            <p>Lorem ipsum dolor sit amet</p>
-            <img src="public/podcast.png" alt="podcast" />
-            <button>подробнее</button>
-          </section>
-          <section class="project-card">
-            <h3>аналитика</h3>
-            <p>Lorem ipsum dolor sit amet</p>
-            <img src="public/analytic.png" alt="analytics" />
-            <button>подробнее</button>
-          </section>
-          <section class="project-card">
-            <h3>мероприятия</h3>
-            <p>Lorem ipsum dolor sit amet</p>
-            <img src="public/events.png" alt="events" />
-            <button>подробнее</button>
-          </section>
-          <section class="project-card">
-            <h3>дизайн и креатив</h3>
-            <p>Lorem ipsum dolor sit amet</p>
-            <img src="public/design.png" alt="design and creativity" />
-            <button>подробнее</button>
-          </section>
-          <section class="project-card">
-            <h3>индивидуальное решение</h3>
-            <p>Lorem ipsum dolor sit amet</p>
-            <img src="public/book.png" alt="individual solution" />
-            <button>подробнее</button>
-          </section>
+        <div class="container">
+          <div class="products-blur" aria-hidden="true"></div>
+          <h1>Продукты и решения</h1>
+          <div class="products-grid">
+            <section class="project-card">
+              <h3>pr и коммуникации</h3>
+              <p>Lorem ipsum dolor sit amet</p>
+              <img src="public/pr.png" alt="pr и коммуникации" />
+              <button>подробнее</button>
+            </section>
+            <section class="project-card">
+              <h3>подкасты</h3>
+              <p>Lorem ipsum dolor sit amet</p>
+              <img src="public/podcast.png" alt="podcast" />
+              <button>подробнее</button>
+            </section>
+            <section class="project-card">
+              <h3>аналитика</h3>
+              <p>Lorem ipsum dolor sit amet</p>
+              <img src="public/analytic.png" alt="analytics" />
+              <button>подробнее</button>
+            </section>
+            <section class="project-card">
+              <h3>мероприятия</h3>
+              <p>Lorem ipsum dolor sit amet</p>
+              <img src="public/events.png" alt="events" />
+              <button>подробнее</button>
+            </section>
+            <section class="project-card">
+              <h3>дизайн и креатив</h3>
+              <p>Lorem ipsum dolor sit amet</p>
+              <img src="public/design.png" alt="design and creativity" />
+              <button>подробнее</button>
+            </section>
+            <section class="project-card">
+              <h3>индивидуальное решение</h3>
+              <p>Lorem ipsum dolor sit amet</p>
+              <img src="public/book.png" alt="individual solution" />
+              <button>подробнее</button>
+            </section>
+          </div>
         </div>
       </section>
       <section class="history">
-        <section class="container">
+        <div class="container">
           <h1>История</h1>
-          <p>
-            <span>КОРОТКАЯ ИСТОРИЯ</span>
-            <span class="history-muted"
-              >Lorem ipsum dolor sit amet, consectetur <br />
-              adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur.
-            </span>
+          <p class="history-text">
+            <span class="history-highlight">КОРОТКАЯ ИСТОРИЯ</span>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
           </p>
-        </section>
+        </div>
       </section>
       <section class="team">
-        <h1>Команда</h1>
-        <section class="cards">
-          <section>
-            <img src="public/nataliya.jpg" alt="team" />
-            <h1>Наталья Абустина</h1>
-            <p>Lorem ipsum dolor sit amet</p>
-          </section>
-          <section>
-            <div class="placeholder"></div>
-            <h1>Имя Фамилия</h1>
-            <p>Lorem ipsum dolor sit amet</p>
-          </section>
-          <section>
-            <div class="placeholder"></div>
-            <h1>Имя Фамилия</h1>
-            <p>Lorem ipsum dolor sit amet</p>
-          </section>
-          <section>
-            <div class="placeholder"></div>
-            <h1>Имя Фамилия</h1>
-            <p>Lorem ipsum dolor sit amet</p>
-          </section>
-        </section>
+        <div class="container">
+          <h1>Команда</h1>
+          <div class="cards">
+            <article class="team-card">
+              <img src="public/nataliya.jpg" alt="Наталья Абустина, team" />
+              <h2>Наталья Абустина</h2>
+              <p>Lorem ipsum dolor sit amet</p>
+            </article>
+            <article class="team-card">
+              <div class="placeholder" aria-hidden="true"></div>
+              <h2>Имя Фамилия</h2>
+              <p>Lorem ipsum dolor sit amet</p>
+            </article>
+            <article class="team-card">
+              <div class="placeholder" aria-hidden="true"></div>
+              <h2>Имя Фамилия</h2>
+              <p>Lorem ipsum dolor sit amet</p>
+            </article>
+            <article class="team-card">
+              <div class="placeholder" aria-hidden="true"></div>
+              <h2>Имя Фамилия</h2>
+              <p>Lorem ipsum dolor sit amet</p>
+            </article>
+          </div>
+        </div>
       </section>
       <section class="publication">
         <h1>Публикации</h1>
-        <section class="card-section-publication">
-          <section class="card">
+        <div class="card-section-publication">
+          <article class="card">
             <div class="left-side">
               <div class="text">
                 <h2>Заголовок</h2>
@@ -160,11 +166,11 @@
               <button>Подробнее</button>
             </div>
             <div class="right-side">
-              <img src="public/table.jpg" alt="Card Image" />
+              <img src="public/table.jpg" alt="Публикация: Заголовок" />
             </div>
-          </section>
+          </article>
 
-          <section class="card">
+          <article class="card">
             <div class="left-side">
               <div class="text">
                 <h2>Заголовок</h2>
@@ -173,11 +179,11 @@
               <button>Подробнее</button>
             </div>
             <div class="right-side">
-              <img src="public/table.jpg" alt="Card Image" />
+              <img src="public/table.jpg" alt="Публикация: Заголовок" />
             </div>
-          </section>
+          </article>
 
-          <section class="card">
+          <article class="card">
             <div class="left-side">
               <div class="text">
                 <h2>Заголовок</h2>
@@ -186,37 +192,38 @@
               <button>Подробнее</button>
             </div>
             <div class="right-side">
-              <img src="public/table.jpg" alt="Card Image" />
+              <img src="public/table.jpg" alt="Публикация: Заголовок" />
             </div>
-          </section>
-        </section>
+          </article>
+        </div>
 
         <div class="more-btn-wrapper">
           <button class="more-btn">Перейти <span class="arrow">→</span></button>
         </div>
       </section>
       <section class="tops">
-        <img src="public/top3.png" alt="3" />
-        <img src="public/top5.png" alt="5" />
-        <img src="public/top20.png" alt="20" />
-        <img src="public/2top20.png" alt="220" />
+        <img src="public/top3.png" alt="Рейтинг: топ 3" />
+        <img src="public/top5.png" alt="Рейтинг: топ 5" />
+        <img src="public/top20.png" alt="Рейтинг: топ 20" />
       </section>
       <section class="clients-about">
-        <h1>Клиенты о нас</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt.
-          <span
-            >Aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.</span
-          >
-        </p>
-        <div class="from">
-          <img src="public/circle.svg" alt="circle" />
-          <div class="name">
-            <h2>Иван Иванов</h2>
-            <p class="org-name">Название организации</p>
+        <div class="container">
+          <h1>Клиенты о нас</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt.
+            <span>
+              Aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur.
+            </span>
+          </p>
+          <div class="from">
+            <img src="public/circle.svg" alt="circle" />
+            <div class="name">
+              <h2>Иван Иванов</h2>
+              <p class="org-name">Название организации</p>
+            </div>
           </div>
         </div>
       </section>
@@ -294,41 +301,42 @@
           </p>
           <img src="public/max.svg" alt="Logo" class="mini-logo" />
         </div>
+        <div class="nav-menu">
+          <nav>
+            <h3>Меню</h3>
+            <ul>
+              <li><a href="#">Меню</a></li>
+              <li><a href="#">Меню</a></li>
+              <li><a href="#">Меню</a></li>
+            </ul>
+          </nav>
 
-        <nav>
-          <h3>Меню</h3>
-          <ul>
-            <li><a href="#">Меню</a></li>
-            <li><a href="#">Меню</a></li>
-            <li><a href="#">Меню</a></li>
-          </ul>
-        </nav>
+          <nav>
+            <h3>Меню</h3>
+            <ul>
+              <li><a href="#">Меню</a></li>
+              <li><a href="#">Меню</a></li>
+              <li><a href="#">Меню</a></li>
+            </ul>
+          </nav>
 
-        <nav>
-          <h3>Меню</h3>
-          <ul>
-            <li><a href="#">Меню</a></li>
-            <li><a href="#">Меню</a></li>
-            <li><a href="#">Меню</a></li>
-          </ul>
-        </nav>
-
-        <div class="footer-contacts">
-          <h3>Контакты</h3>
-          <ul>
-            <li>
-              <img src="public/phone.svg" alt="" />
-              <a href="tel:888888888888">888888888888</a>
-            </li>
-            <li>
-              <img src="public/mail.svg" alt="" />
-              <a href="mailto:Hey@com">Hey@com</a>
-            </li>
-            <li>
-              <img src="public/location.svg" alt="" />
-              <span>Москва</span>
-            </li>
-          </ul>
+          <div class="footer-contacts">
+            <h3>Контакты</h3>
+            <ul>
+              <li>
+                <img src="public/phone.svg" alt="" />
+                <a href="tel:888888888888">888888888888</a>
+              </li>
+              <li>
+                <img src="public/mail.svg" alt="" />
+                <a href="mailto:Hey@com">Hey@com</a>
+              </li>
+              <li>
+                <img src="public/location.svg" alt="" />
+                <span>Москва</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
