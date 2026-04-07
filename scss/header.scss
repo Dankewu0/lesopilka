@@ -30,7 +30,8 @@ header {
     align-items: center;
     justify-content: center;
     border: none;
-    width: 155px;
+    width: 100%;
+    max-width: 155px;
     font-weight: 400;
     background: linear-gradient(to right, #aaaaaa, #c8c8c8);
     padding: 10px 20px;
