@@ -6,10 +6,10 @@
   font-family: "Bebas Neue Cyrillic", sans-serif;
   font-weight: 400;
   padding: clamp(64px, 6.944444vw, 100px) clamp(20px, 2.777778vw, 40px);
-  min-height: min(53.125vw, 765px);
-
+  min-height: clamp(330px, 50vh, 708px);
   .container {
     display: flex;
+    max-width: 1340px;
     flex-direction: column;
     align-items: center;
     justify-content: center;

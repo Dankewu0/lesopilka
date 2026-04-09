@@ -1,26 +1,23 @@
 .team {
   width: 100%;
+  min-height: clamp(300px, 100vh, 962px);
   background-image: url("../public/team-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: clamp(64px, 6vw, 96px) 0;
   font-family: "Bebas Neue Cyrillic", sans-serif;
-  height: 962px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .container {
     display: flex;
     flex-direction: column;
-    max-width: 1337px;
     width: 100%;
-    margin: 0 auto;
-    /* Базовый паддинг + 30px сдвига влево */
-    padding: 0 clamp(20px, 2.7vw, 40px);
-    padding-left: calc(clamp(20px, 2.7vw, 40px) + 30px);
+    max-width: 1337px;
+    padding: 0 20px;
   }
 
   h1 {
@@ -29,21 +26,22 @@
     line-height: 1;
     text-transform: uppercase;
     margin-bottom: clamp(40px, 5vw, 60px);
-    width: max-content;
-    align-self: flex-start;
+    width: 100%;
+    max-width: calc((250px * 4) + (clamp(20px, 3vw, 33px) * 3));
+    align-self: center;
+    text-align: left;
   }
 
   .cards {
     display: flex;
+    justify-content: center;
     gap: clamp(20px, 3vw, 33px);
+    width: 100%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
-    width: 100%;
-    padding-bottom: 12px;
-
-    /* Убираем лишние расчеты, просто позволяем контенту выходить за правый край */
-    margin-right: -100%;
 
     &::-webkit-scrollbar {
       display: none;
@@ -51,15 +49,10 @@
 
     .team-card {
       flex: 0 0 250px;
-      scroll-snap-align: start;
+      scroll-snap-align: center;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      transition: transform 0.25s ease;
-
-      &:hover {
-        transform: scale(1.03);
-      }
 
       img,
       .placeholder {
@@ -67,21 +60,20 @@
         aspect-ratio: 296.25 / 362;
         border-radius: 24px;
         object-fit: cover;
-        object-position: left bottom;
         background: #e4e4e4;
       }
 
       h2 {
         font-size: clamp(20px, 4vw, 32px);
         margin: 12px 0 4px;
-        text-align: left;
+        text-transform: uppercase;
       }
 
       p {
         font-size: clamp(14px, 3vw, 16px);
         margin: 0;
         color: rgba(0, 0, 0, 0.6);
-        text-align: left;
+        text-transform: uppercase;
       }
     }
   }

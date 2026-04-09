@@ -1,156 +1,122 @@
 .publication {
-  width: 100%;
-  padding: 30px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 879px;
-  font-family: "Bebas Neue Cyrillic", sans-serif;
-
+  height: 879px;
+  align-items: center;
   .container {
-    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1335px;
+    height: auto;
+    min-height: 665px;
   }
-
   h1 {
-    width: 100%;
-    max-width: 1206px;
-    margin: 0 0 20px 0;
-    font-size: clamp(32px, 8vw, 96px);
-    text-transform: uppercase;
-    text-align: left;
+    font-family: "Bebas Neue Cyrillic", sans-serif;
+    font-size: clamp(48px, 8vw, 96px);
+    padding-bottom: clamp(12px, 2vw, 24px);
+    margin: 0;
   }
-
   .card-section-publication {
-    width: 100%;
-    max-width: 1206px;
     display: flex;
-    gap: 33px;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    padding-bottom: 20px;
+    flex-direction: row;
+    height: auto;
+    gap: 33px;
   }
-
-  .card {
-    flex: 1 1 380px;
-    max-width: 380px;
-    height: 399px;
+  .more-btn {
+    font-family: "HelveticaNeueCyr", sans-serif;
+    text-transform: lowercase;
+    gap: 5px;
+    align-self: flex-end;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 155px;
+    height: 48px;
+    border-radius: 50px;
+    background: linear-gradient(#cecece, #d5d5d5);
+    border: none;
+    cursor: pointer;
+  }
+  .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 423px;
+    height: 399px;
     border-radius: 24px;
-    background: #fff;
+    padding: 20px;
+    overflow: hidden;
     position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      padding: 2px;
-      border-radius: 24px;
-      background: linear-gradient(
-        119.63deg,
-        #7d9487 -7.35%,
-        #ffffff 48.08%,
-        #666666 102.16%
-      );
-      -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      mask-composite: exclude;
-      pointer-events: none;
+    background:
+      linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(
+          95.06deg,
+          rgba(93, 93, 93, 0.42) -7.2%,
+          rgba(255, 255, 255, 0.42) 39.29%,
+          rgba(102, 102, 102, 0.42) 85.78%
+        )
+        border-box;
+    border: 1px solid transparent;
+    gap: 20px;
+    span {
+      font-family: "Bebas Neue Cyrillic", sans-serif;
+      font-size: 32px;
     }
-
+    p {
+      font-family: "HelveticaNeueCyr", sans-serif;
+      font-size: 16px;
+    }
+    img {
+      height: 439px;
+      margin: -20px -20px -20px 0;
+      display: block;
+    }
     .left-side {
-      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 16px;
-      position: relative;
-      z-index: 1;
-
-      .text {
-        h2 {
-          margin: 0;
-          font-size: clamp(20px, 2vw, 32px);
-          text-align: left;
-        }
-
-        p {
-          margin: 0;
-          font-size: clamp(12px, 1.5vw, 16px);
-          font-family: Helvetica, Arial, sans-serif;
-          text-align: left;
-        }
-      }
-
+      flex: 1;
       button {
-        width: clamp(120px, 12vw, 155px);
+        font-family: "HelveticaNeueCyr", sans-serif;
+        width: 155px;
         height: 48px;
-        border-radius: 60px;
-        border: 2px solid transparent;
+        font-size: 16px;
+        border-radius: 50px;
+        text-transform: lowercase;
         background:
           linear-gradient(#fff, #fff) padding-box,
           linear-gradient(
-              119.63deg,
-              #7d9487 -7.35%,
-              #ffffff 48.08%,
-              #666666 102.16%
+              95.06deg,
+              rgba(93, 93, 93, 0.42) -7.2%,
+              rgba(255, 255, 255, 0.42) 39.29%,
+              rgba(102, 102, 102, 0.42) 85.78%
             )
             border-box;
-        font-size: clamp(12px, 1.2vw, 16px);
-        font-family: Helvetica, Arial, sans-serif;
-        text-transform: lowercase;
+        border: 1px solid transparent;
         cursor: pointer;
-        align-self: flex-start;
       }
     }
-
     .right-side {
-      flex: 1;
-      min-width: 150px;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        display: block;
-        border-top-right-radius: 22px;
-        border-bottom-right-radius: 22px;
-      }
+      display: flex;
     }
   }
-
-  .more-btn-wrapper {
-    width: 100%;
-    max-width: 1206px;
-    margin-top: 24px;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .more-btn {
-    background: #d5d5d5;
-    border: 2px solid transparent;
-    border-radius: 60px;
-    padding: 12px 24px;
-    font-size: clamp(12px, 1.2vw, 16px);
-    font-family: Helvetica, Arial, sans-serif;
-    text-transform: lowercase;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    .arrow {
-      font-size: clamp(14px, 1.2vw, 18px);
+}
+@media (max-width: 1335px) {
+  .publication {
+    height: auto;
+    padding: 40px 20px;
+    .container {
+      min-height: auto;
+      gap: 40px;
+    }
+    .card-section-publication {
+      justify-content: center;
+    }
+    .more-btn {
+      align-self: center;
     }
   }
 }
