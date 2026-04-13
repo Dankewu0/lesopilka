@@ -19,7 +19,7 @@
     position: relative;
   }
 
-  h1 {
+  h2 {
     font-family: "Bebas Neue Cyrillic", sans-serif;
     text-transform: uppercase;
     font-size: clamp(48px, 8vw, 96px);
@@ -61,7 +61,7 @@
       justify-content: center;
       gap: 4px;
 
-      h2 {
+      h3 {
         font-size: clamp(14px, 1.5vw, 18px);
         font-family: Helvetica, Arial, sans-serif;
         margin: 0;
@@ -83,7 +83,6 @@
     gap: 20px;
     margin-top: 40px;
 
-    /* Десктопная позиция */
     @media (min-width: 1025px) {
       position: absolute;
       right: 0;
@@ -91,7 +90,6 @@
       margin-top: 0;
     }
 
-    /* Мобильная позиция: в поток по центру/лево */
     @media (max-width: 1024px) {
       position: static;
       align-self: flex-start;
@@ -117,11 +115,12 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      position: relative;
-      background: transparent;
+      background: rgba(255, 255, 255, 0.01);
       border: none;
-      transition: backdrop-filter 0.3s ease;
-      isolation: isolate;
+      transition:
+        backdrop-filter 0.3s ease,
+        background 0.3s ease;
+      will-change: backdrop-filter;
 
       &::before {
         content: "";
@@ -144,6 +143,7 @@
       }
 
       &:hover {
+        background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
       }
