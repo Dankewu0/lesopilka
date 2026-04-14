@@ -9,8 +9,10 @@
   padding: 40px;
 
   .container {
-    max-width: 1206px;
+    max-width: 1340px;
     margin: 0 auto;
+    gap: 40px;
+    height: clamp(520px, 60vw, 665px);
   }
 
   .download-btn {
@@ -47,16 +49,18 @@
   .content-wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     gap: 40px;
-    position: relative;
     flex-wrap: wrap;
     width: 100%;
 
     .left-side {
-      position: relative;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       flex: 1 1 300px;
+      max-width: 466px;
+      gap: 127px;
 
       h2 {
         display: block;
@@ -64,7 +68,6 @@
         line-height: 110%;
         text-transform: uppercase;
         margin: 0;
-        z-index: 2;
         max-width: min-content;
         word-wrap: break-word;
         hyphens: none;
@@ -74,9 +77,7 @@
         width: clamp(120px, 20vw, 204px);
         height: auto;
         object-fit: cover;
-        position: absolute;
-        right: 0;
-        bottom: 0;
+        align-self: flex-end;
       }
     }
 
@@ -85,7 +86,6 @@
       flex-direction: column;
       justify-content: flex-end;
       gap: 23px;
-      position: relative;
       font-family: "HelveticaNeueCyr";
       flex: 1 1 400px;
       min-width: 0;
@@ -149,14 +149,15 @@
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          gap: 15px;
+          gap: 23px;
           width: 100%;
 
           .submit-btn {
             width: clamp(140px, 15vw, 160px);
             height: 49px;
-            background: #cecece;
+            background: #cbf4f0 url("../public/button-bg.png") no-repeat;
             border-radius: 50px;
+            background-size: 110%;
             border: none;
             font-family: "HelveticaNeueCyr";
             font-size: 20px;
@@ -168,14 +169,10 @@
             align-items: center;
             gap: 10px;
             cursor: pointer;
-            position: relative;
             width: 100%;
 
             input {
-              position: absolute;
-              opacity: 0;
-              width: 0;
-              height: 0;
+              display: none;
 
               &:checked ~ .checkmark::after {
                 display: block;

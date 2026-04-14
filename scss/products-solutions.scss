@@ -8,6 +8,7 @@
   overflow: hidden;
   min-height: min(85.902778vw, 1237px);
   background: #d5d5d5;
+
   .container {
     display: flex;
     flex-direction: column;
@@ -16,6 +17,7 @@
     flex-wrap: wrap;
     width: 100%;
   }
+
   h2 {
     position: relative;
     z-index: 1;
@@ -45,6 +47,8 @@
       &:hover {
         transform: scale(1.03);
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        outline: 1px solid rgba(0, 0, 0, 0.15);
+        outline-offset: -1px;
       }
 
       button {
