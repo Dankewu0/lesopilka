@@ -9,6 +9,9 @@
   justify-content: center;
   align-items: center;
 
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+
   .container {
     display: flex;
     flex-direction: column;
@@ -26,11 +29,11 @@
     width: 100%;
   }
 
-  /* SWIPER */
   .clientsSwiper {
     width: 100%;
     position: relative;
     overflow: hidden;
+    touch-action: pan-y;
   }
 
   .swiper-wrapper {
@@ -126,6 +129,11 @@
     button {
       width: 88px;
       height: 56px;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-user-select: none;
+      user-select: none;
+      touch-action: manipulation;
+
       border-radius: 100px;
       display: flex;
       align-items: center;

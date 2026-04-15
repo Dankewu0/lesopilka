@@ -670,6 +670,8 @@ header .btn {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 .clients-about .container {
   display: flex;
@@ -686,13 +688,11 @@ header .btn {
   margin-bottom: 25px;
   width: 100%;
 }
-.clients-about {
-  /* SWIPER */
-}
 .clients-about .clientsSwiper {
   width: 100%;
   position: relative;
   overflow: hidden;
+  touch-action: pan-y;
 }
 .clients-about .swiper-wrapper {
   display: flex;
@@ -777,6 +777,10 @@ header .btn {
 .clients-about .slider-controls button {
   width: 88px;
   height: 56px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
   border-radius: 100px;
   display: flex;
   align-items: center;
