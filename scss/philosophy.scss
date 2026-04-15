@@ -25,11 +25,12 @@
     align-items: center;
     width: 100%;
     color: #0c0c0c;
+    font-weight: 400;
   }
   p {
     display: block;
     font-size: clamp(16px, 4vw, 48px);
-    line-height: 1.4;
+    line-height: 1.1;
     text-transform: uppercase;
     color: #0c0c0c;
     margin: 0 auto;

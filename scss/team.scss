@@ -37,6 +37,7 @@
     justify-content: center;
     gap: clamp(20px, 3vw, 33px);
     width: 100%;
+
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
@@ -75,6 +76,26 @@
         color: rgba(0, 0, 0, 0.6);
         text-transform: uppercase;
       }
+    }
+  }
+
+  /* 🔥 FIX ДЛЯ МОБИЛКИ */
+  @media (max-width: 768px) {
+    .cards {
+      justify-content: flex-start;
+      padding-bottom: 10px;
+    }
+
+    .cards .team-card {
+      flex: 0 0 85%;
+      max-width: 85%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cards .team-card {
+      flex: 0 0 100%;
+      max-width: 100%;
     }
   }
 }
