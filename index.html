@@ -222,30 +222,107 @@
       <section class="clients-about">
         <div class="container">
           <h2>Клиенты о нас</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt.
-            <span>
-              Aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
-            </span>
-          </p>
-          <div class="from">
-            <img src="public/circle.svg" alt="circle" />
-            <div class="name">
-              <h3>Иван Иванов</h3>
-              <p class="org-name">Название организации</p>
+
+          <div class="swiper clientsSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt.
+                  <span>
+                    Aliquip ex ea commodo consequat. Duis aute irure dolor in
+                    reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur.
+                  </span>
+                </p>
+
+                <div class="from">
+                  <img src="public/circle.svg" alt="circle" />
+                  <div class="name">
+                    <h3>Иван Иванов</h3>
+                    <p class="org-name">Название организации</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt. aliquip ex ea commodo consequat.
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur.
+                </p>
+                <div class="from">
+                  <img src="public/circle.svg" alt="circle" />
+                  <div class="name">
+                    <h3>Пётр Петров</h3>
+                    <p class="org-name">Название организации</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt. aliquip ex ea commodo consequat.
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur.
+                </p>
+                <div class="from">
+                  <img src="public/circle.svg" alt="circle" />
+                  <div class="name">
+                    <h3>Анна Смирнова</h3>
+                    <p class="org-name">Название организации</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt. aliquip ex ea commodo consequat.
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur.
+                </p>
+                <div class="from">
+                  <img src="public/circle.svg" alt="circle" />
+                  <div class="name">
+                    <h3>Дмитрий Соколов</h3>
+                    <p class="org-name">Название организации</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt. aliquip ex ea commodo consequat.
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur.
+                </p>
+                <div class="from">
+                  <img src="public/circle.svg" alt="circle" />
+                  <div class="name">
+                    <h3>Елена Кузнецова</h3>
+                    <p class="org-name">Название организации</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="slider-controls">
-            <button>
-              <img src="public/arrow-left.svg" alt="prev" />
-            </button>
-            <div class="counter">01<span>/05</span></div>
-            <button>
-              <img src="public/arrow-right.svg" alt="next" />
-            </button>
+
+            <div class="slider-controls">
+              <button class="prev">
+                <img src="public/arrow-left.svg" alt="prev" />
+              </button>
+
+              <div class="counter">
+                <span class="current">01</span><span>/05</span>
+              </div>
+
+              <button class="next">
+                <img src="public/arrow-right.svg" alt="next" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -443,6 +520,111 @@
         initInfiniteScroll(".tops", "tops-track", 10, 0.6);
         initInfiniteScroll(".company", "company-track", 60, 0.5);
       })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      (() => {
+        const initInfiniteScroll = (selector, trackClassName, gap, speed) => {
+          const root = document.querySelector(selector);
+
+          if (!root) return;
+
+          const items = Array.from(root.querySelectorAll("img"));
+          if (!items.length) return;
+
+          const track = document.createElement("div");
+          track.className = trackClassName;
+
+          items.forEach((item) => track.appendChild(item));
+          root.appendChild(track);
+
+          const cloneItem = (node) => node.cloneNode(true);
+
+          const measureSetWidth = () => {
+            const firstSet = [...track.children].slice(0, items.length);
+
+            return (
+              firstSet.reduce(
+                (sum, node) => sum + node.getBoundingClientRect().width,
+                0,
+              ) +
+              (firstSet.length - 1) * gap
+            );
+          };
+
+          const rebuildTrack = () => {
+            track.innerHTML = "";
+            items.forEach((item) => track.appendChild(item));
+
+            const baseWidth = measureSetWidth();
+            const needWidth = root.clientWidth + baseWidth;
+
+            while (track.scrollWidth < needWidth) {
+              items.forEach((item) => {
+                track.appendChild(cloneItem(item));
+              });
+            }
+          };
+
+          let offset = 0;
+          let loopWidth = 0;
+          let frameId = 0;
+
+          const render = () => {
+            offset -= speed;
+
+            if (Math.abs(offset) >= loopWidth) {
+              offset = 0;
+            }
+
+            track.style.transform = `translate3d(${offset}px, 0, 0)`;
+            frameId = requestAnimationFrame(render);
+          };
+
+          const start = () => {
+            cancelAnimationFrame(frameId);
+            rebuildTrack();
+            loopWidth = measureSetWidth();
+            offset = 0;
+            track.style.transform = "translate3d(0, 0, 0)";
+            render();
+          };
+
+          start();
+          window.addEventListener("resize", start);
+        };
+
+        initInfiniteScroll(".tops", "tops-track", 10, 0.6);
+        initInfiniteScroll(".company", "company-track", 60, 0.5);
+      })();
+    </script>
+
+    <script>
+      const swiper = new Swiper(".clientsSwiper", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        navigation: {
+          nextEl: ".next",
+          prevEl: ".prev",
+        },
+        on: {
+          init: function () {
+            updateCounter(this);
+          },
+          slideChange: function () {
+            updateCounter(this);
+          },
+        },
+      });
+
+      function updateCounter(swiper) {
+        const current = document.querySelector(".current");
+        const index = swiper.realIndex + 1;
+        current.textContent = String(index).padStart(2, "0");
+      }
     </script>
   </body>
 </html>

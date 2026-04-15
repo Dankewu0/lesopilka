@@ -674,11 +674,10 @@ header .btn {
 .clients-about .container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
   width: 100%;
   max-width: 1206px;
   gap: 25px;
+  position: relative;
 }
 .clients-about h2 {
   font-family: "Bebas Neue Cyrillic", sans-serif;
@@ -687,22 +686,42 @@ header .btn {
   margin-bottom: 25px;
   width: 100%;
 }
-.clients-about p {
+.clients-about {
+  /* SWIPER */
+}
+.clients-about .clientsSwiper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.clients-about .swiper-wrapper {
+  display: flex;
+  width: 100%;
+}
+.clients-about .swiper-slide {
+  width: 100% !important;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+.clients-about .swiper-slide > p {
   margin: 25px 0 0 0;
   padding: 0 0 0 clamp(0px, 2vw, 30px);
-  max-width: 670px;
   font-size: clamp(20px, 4vw, 40px);
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.2;
+  max-width: 670px;
+}
+.clients-about .swiper-slide > p span {
+  display: inline;
 }
 .clients-about .from {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 12px;
   margin-left: clamp(0px, 2vw, 30px);
-  margin-top: 42px;
 }
 .clients-about .from img {
   width: clamp(40px, 8vw, 70px);
@@ -712,7 +731,6 @@ header .btn {
 .clients-about .from .name {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 4px;
 }
 .clients-about .from .name h3 {
@@ -720,9 +738,8 @@ header .btn {
   font-family: Helvetica, Arial, sans-serif;
   margin: 0;
 }
-.clients-about .from .name p {
+.clients-about .from .name .org-name {
   margin: 0;
-  padding: 0;
   font-size: clamp(12px, 1.2vw, 18px);
   font-family: Helvetica, Arial, sans-serif;
   color: #878c91;
@@ -746,7 +763,6 @@ header .btn {
     position: static;
     align-self: flex-start;
     margin-left: clamp(0px, 2vw, 30px);
-    width: auto;
   }
 }
 .clients-about .slider-controls .counter {
@@ -768,8 +784,8 @@ header .btn {
   cursor: pointer;
   background: rgba(255, 255, 255, 0.01);
   border: none;
+  position: relative;
   transition: backdrop-filter 0.3s ease, background 0.3s ease;
-  will-change: backdrop-filter;
 }
 .clients-about .slider-controls button::before {
   content: "";
@@ -786,7 +802,6 @@ header .btn {
 .clients-about .slider-controls button:hover {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 .clients-about .slider-controls button img {
   width: 24px;
