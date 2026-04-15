@@ -93,8 +93,8 @@
 
     .project-card {
       flex: 0 0 399px;
-      width: 399px;
-      height: 423px;
+      width: clamp(100px, 28vw, 399px);
+      height: clamp(110px, 30vw, 423px);
       display: flex;
       flex-direction: column;
       position: relative;
@@ -165,6 +165,22 @@
       &:hover button {
         transform: scale(1.05);
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .products-and-soluction {
+    padding: clamp(40px, 5.555556vw, 80px) 10px;
+
+    .products-grid {
+      width: 100%;
+      transform: translateX(-1px);
+    }
+
+    h2 {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }
