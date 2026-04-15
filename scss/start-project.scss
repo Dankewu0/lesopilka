@@ -7,7 +7,7 @@
   background-size: cover;
   overflow: hidden;
   padding: 40px;
-
+  min-height: 862px;
   .container {
     max-width: 1340px;
     margin: 0 auto;
@@ -60,7 +60,7 @@
       justify-content: space-between;
       flex: 1 1 300px;
       max-width: 466px;
-      gap: 127px;
+      gap: clamp(2px, 2vw, 127px);
 
       h2 {
         display: block;
@@ -209,6 +209,27 @@
               line-height: 1.2;
             }
           }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content-wrapper {
+      .left-side {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+
+        h2 {
+          max-width: 70%;
+          font-size: clamp(28px, 6vw, 42px);
+        }
+
+        .character-img {
+          width: clamp(80px, 18vw, 140px);
+          align-self: center;
         }
       }
     }

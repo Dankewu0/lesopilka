@@ -804,6 +804,7 @@ header .btn {
   background-size: cover;
   overflow: hidden;
   padding: 40px;
+  min-height: 862px;
 }
 .start-project .container {
   max-width: 1340px;
@@ -854,7 +855,7 @@ header .btn {
   justify-content: space-between;
   flex: 1 1 300px;
   max-width: 466px;
-  gap: 127px;
+  gap: clamp(2px, 2vw, 127px);
 }
 .start-project .content-wrapper .left-side h2 {
   display: block;
@@ -979,6 +980,22 @@ header .btn {
   font-size: clamp(12px, 1.4vw, 16px);
   color: #000000;
   line-height: 1.2;
+}
+@media (max-width: 768px) {
+  .start-project .content-wrapper .left-side {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .start-project .content-wrapper .left-side h2 {
+    max-width: 70%;
+    font-size: clamp(28px, 6vw, 42px);
+  }
+  .start-project .content-wrapper .left-side .character-img {
+    width: clamp(80px, 18vw, 140px);
+    align-self: center;
+  }
 }
 
 .brief {
