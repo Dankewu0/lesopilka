@@ -8,10 +8,14 @@
   </head>
   <body>
     <header>
-      <section class="container">
-        <nav>
+      <div class="container">
+        <button class="burger" aria-expanded="false" aria-controls="nav">
+          ☰
+        </button>
+
+        <nav id="nav">
           <ul>
-            <li><a href="/" aria-current="page">Главная</a></li>
+            <li><a href="#" aria-current="page">Главная</a></li>
             <li><a href="#">О нас</a></li>
             <li><a href="#">Наш подкаст</a></li>
             <li><a href="#">Продукты</a></li>
@@ -20,8 +24,9 @@
             <li><a href="#">Контакты</a></li>
           </ul>
         </nav>
-      </section>
-      <a href="tel:+79990000000" class="btn">Связаться</a>
+
+        <a href="tel:+79990000000" class="btn">Связаться</a>
+      </div>
     </header>
     <main>
       <section class="brief">
@@ -89,43 +94,46 @@
             aute irure dolor in reprehenderit in voluptate velit esse cillum
             dolore eu fugiat nulla pariatur.
           </p>
-          <img src="public/max.svg" alt="Logo" class="mini-logo" />
+          <a href="/max">
+            <img src="public/max.svg" alt="Logo" class="mini-logo" />
+          </a>
         </div>
+        <div class="nav-menu">
+          <nav>
+            <h3>Меню</h3>
+            <ul>
+              <li><a href="#">Меню</a></li>
+              <li><a href="#">Меню</a></li>
+              <li><a href="#">Меню</a></li>
+            </ul>
+          </nav>
 
-        <nav>
-          <h3>Меню</h3>
-          <ul>
-            <li><a href="#">Меню</a></li>
-            <li><a href="#">Меню</a></li>
-            <li><a href="#">Меню</a></li>
-          </ul>
-        </nav>
+          <nav>
+            <h3>Меню</h3>
+            <ul>
+              <li><a href="#">Меню</a></li>
+              <li><a href="#">Меню</a></li>
+              <li><a href="#">Меню</a></li>
+            </ul>
+          </nav>
 
-        <nav>
-          <h3>Меню</h3>
-          <ul>
-            <li><a href="#">Меню</a></li>
-            <li><a href="#">Меню</a></li>
-            <li><a href="#">Меню</a></li>
-          </ul>
-        </nav>
-
-        <div class="footer-contacts">
-          <h3>Контакты</h3>
-          <ul>
-            <li>
-              <img src="public/phone.svg" alt="" />
-              <a href="tel:888888888888">888888888888</a>
-            </li>
-            <li>
-              <img src="public/mail.svg" alt="" />
-              <a href="mailto:Hey@com">Hey@com</a>
-            </li>
-            <li>
-              <img src="public/location.svg" alt="" />
-              <span>Москва</span>
-            </li>
-          </ul>
+          <div class="footer-contacts">
+            <h3>Контакты</h3>
+            <ul>
+              <li>
+                <img src="public/phone.svg" alt="" />
+                <a href="tel:888888888888">888888888888</a>
+              </li>
+              <li>
+                <img src="public/mail.svg" alt="" />
+                <a href="mailto:Hey@com">Hey@com</a>
+              </li>
+              <li>
+                <img src="public/location.svg" alt="" />
+                <span>Москва</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
