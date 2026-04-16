@@ -76,14 +76,30 @@ header {
   justify-content: center;
   min-height: 100px;
   padding: 10px clamp(10px, 2vw, 40px);
+  position: relative;
+  isolation: isolate;
+  z-index: 999;
+}
+header .burger {
+  display: none;
+  position: relative;
+  z-index: 1000;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #111;
+  font-size: 28px;
 }
 header .container {
+  display: flex;
   align-items: center;
   width: 100%;
   min-height: 48px;
   max-width: 1340px;
   justify-content: space-between;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
 }
 header ul {
   flex-wrap: wrap;
@@ -112,6 +128,33 @@ header .btn {
   height: 48px;
   color: white;
   text-decoration: none;
+}
+@media (max-width: 768px) {
+  header .burger {
+    display: block;
+  }
+  header nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    background: #c8c8c8;
+    padding: 80px 20px;
+    z-index: 900;
+  }
+  header nav.open {
+    display: block;
+  }
+  header nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+  header nav a {
+    color: #000;
+    font-size: 18px;
+  }
 }
 
 .hero {
