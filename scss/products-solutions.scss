@@ -92,9 +92,9 @@
     width: min(100%, 1266px);
 
     .project-card {
-      flex: 0 0 399px;
-      width: clamp(100px, 28vw, 399px);
-      height: clamp(110px, 30vw, 423px);
+      flex: 0 0 clamp(350px, 22vw, 399px);
+      width: clamp(350px, 22vw, 399px);
+      height: clamp(370px, 24vw, 423px);
       display: flex;
       flex-direction: column;
       position: relative;

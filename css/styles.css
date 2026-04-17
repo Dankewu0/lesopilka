@@ -281,7 +281,7 @@ header .btn {
 }
 .philosophy p {
   display: block;
-  font-size: clamp(16px, 4vw, 48px);
+  font-size: clamp(24px, 4vw, 48px);
   line-height: 1.1;
   text-transform: uppercase;
   color: #0c0c0c;
@@ -381,9 +381,9 @@ header .btn {
   width: min(100%, 1266px);
 }
 .products-and-soluction .products-grid .project-card {
-  flex: 0 0 399px;
-  width: clamp(100px, 28vw, 399px);
-  height: clamp(110px, 30vw, 423px);
+  flex: 0 0 clamp(350px, 22vw, 399px);
+  width: clamp(350px, 22vw, 399px);
+  height: clamp(370px, 24vw, 423px);
   display: flex;
   flex-direction: column;
   position: relative;
