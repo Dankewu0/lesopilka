@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "HelveticaNeueCyr";
   src: url("../fonts/HelveticaNeueCyr/helveticaneuecyr_roman.otf") format("opentype");
@@ -381,8 +380,8 @@ header .btn {
   width: min(100%, 1266px);
 }
 .products-and-soluction .products-grid .project-card {
-  flex: 0 0 clamp(350px, 22vw, 399px);
-  width: clamp(350px, 22vw, 399px);
+  flex: 0 0 clamp(250px, 22vw, 399px);
+  width: clamp(250px, 22vw, 399px);
   height: clamp(370px, 24vw, 423px);
   display: flex;
   flex-direction: column;
@@ -633,7 +632,7 @@ header .btn {
   text-transform: uppercase;
   margin-bottom: clamp(40px, 5vw, 60px);
   width: 100%;
-  max-width: calc(1000px + clamp(20px, 3vw, 33px) * 3);
+  max-width: calc(500px + clamp(20px, 3vw, 33px) * 3);
   align-self: center;
   text-align: left;
 }
@@ -652,33 +651,31 @@ header .btn {
   display: none;
 }
 .team .cards .team-card {
-  flex: 0 0 250px;
+  flex: 0 0 clamp(125px, 12vw, 250px);
+  max-width: clamp(125px, 12vw, 250px);
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 .team .cards .team-card img,
 .team .cards .team-card .placeholder {
   width: 100%;
   aspect-ratio: 296.25/362;
-  border-radius: 24px;
+  border-radius: 16px;
   object-fit: cover;
   background: #e4e4e4;
 }
 .team .cards .team-card h3 {
-  font-size: clamp(20px, 4vw, 32px);
-  margin: 12px 0 4px;
+  font-size: clamp(14px, 2vw, 24px);
+  margin: 8px 0 2px;
   text-transform: uppercase;
 }
 .team .cards .team-card p {
-  font-size: clamp(14px, 3vw, 16px);
+  font-size: clamp(10px, 2vw, 14px);
   margin: 0;
   color: rgba(0, 0, 0, 0.6);
   text-transform: uppercase;
-}
-.team {
-  /* 🔥 FIX ДЛЯ МОБИЛКИ */
 }
 @media (max-width: 768px) {
   .team .cards {
