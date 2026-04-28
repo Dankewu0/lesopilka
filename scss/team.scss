@@ -25,10 +25,11 @@
     font-weight: 400;
     line-height: 1;
     text-transform: uppercase;
-    margin-bottom: clamp(40px, 5vw, 60px);
+    margin-bottom: 56px;
+    margin-left: clamp(1px, 8vw, 100px);
     width: 100%;
     max-width: calc((125px * 4) + (clamp(20px, 3vw, 33px) * 3));
-    align-self: center;
+    align-self: start;
     text-align: left;
   }
 
@@ -49,8 +50,8 @@
     }
 
     .team-card {
-      flex: 0 0 clamp(125px, 12vw, 250px);
-      max-width: clamp(125px, 12vw, 250px);
+      flex: 0 0 clamp(125px, 15vw, 250px);
+      max-width: clamp(125px, 15vw, 250px);
       scroll-snap-align: center;
       display: flex;
       flex-direction: column;

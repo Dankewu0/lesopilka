@@ -91,6 +91,7 @@
       font-family: "HelveticaNeueCyr";
       flex: 1 1 400px;
       min-width: 0;
+      margin-left: 40px;
 
       .header-row {
         display: flex;
@@ -126,110 +127,109 @@
         flex-direction: column;
         gap: 23px;
         width: 100%;
+      }
 
-        input,
-        textarea {
-          width: 100%;
-          border-radius: 24px;
+      .header-row + form {
+        margin-top: 23px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border-radius: 24px;
+        border: none;
+        padding: clamp(15px, 3vw, 25px) clamp(20px, 4vw, 30px);
+        box-sizing: border-box;
+        font-family: "HelveticaNeueCyr";
+        font-size: clamp(18px, 2.5vw, 25px);
+        color: #000;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: #aaaaaa;
+      }
+
+      input {
+        height: clamp(56px, 8vw, 72px);
+      }
+
+      textarea {
+        height: clamp(120px, 15vw, 176px);
+        resize: none;
+        border: 1px solid transparent;
+        background:
+          linear-gradient(#fff, #fff) padding-box,
+          linear-gradient(119.63deg, #7d9487 -7.35%, #fff 48.08%, #666 102.16%)
+            border-box;
+      }
+
+      .controls-column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 23px;
+        width: 100%;
+
+        .submit-btn {
+          width: clamp(140px, 15vw, 160px);
+          height: 49px;
+          background: #cbf4f0 url("../public/button-bg.png") no-repeat;
+          border-radius: 50px;
+          background-size: 110%;
           border: none;
-          padding: clamp(15px, 3vw, 25px) clamp(20px, 4vw, 30px);
-          box-sizing: border-box;
           font-family: "HelveticaNeueCyr";
-          font-size: clamp(18px, 2.5vw, 25px);
-          color: #000;
-        }
-
-        input::placeholder,
-        textarea::placeholder {
-          color: #aaaaaa;
-        }
-
-        input {
-          height: clamp(56px, 8vw, 72px);
-        }
-
-        textarea {
-          height: clamp(120px, 15vw, 176px);
-          resize: none;
-          border: 1px solid transparent;
-          background:
-            linear-gradient(#fff, #fff) padding-box,
-            linear-gradient(
-                119.63deg,
-                #7d9487 -7.35%,
-                #fff 48.08%,
-                #666 102.16%
-              )
-              border-box;
-        }
-
-        .controls-column {
+          font-size: 20px;
+          cursor: pointer;
           display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 23px;
+          align-items: center;
+          justify-content: center;
+          line-height: 1;
+        }
+
+        .agreement {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
           width: 100%;
 
-          .submit-btn {
-            width: clamp(140px, 15vw, 160px);
-            height: 49px;
-            background: #cbf4f0 url("../public/button-bg.png") no-repeat;
-            border-radius: 50px;
-            background-size: 110%;
-            border: none;
-            font-family: "HelveticaNeueCyr";
-            font-size: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
+          input {
+            display: none;
+
+            &:checked ~ .checkmark::after {
+              display: block;
+            }
           }
 
-          .agreement {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            width: 100%;
+          .checkmark {
+            width: 34px;
+            height: 34px;
+            border: 1px solid #a0a0a0;
+            border-radius: 50%;
+            position: relative;
+            flex-shrink: 0;
+            box-sizing: border-box;
 
-            input {
+            &::after {
+              content: "";
+              position: absolute;
               display: none;
-
-              &:checked ~ .checkmark::after {
-                display: block;
-              }
+              left: 50%;
+              top: 45%;
+              width: 8px;
+              height: 14px;
+              border: solid #000;
+              border-width: 0 2px 2px 0;
+              transform: translate(-50%, -50%) rotate(45deg);
             }
+          }
 
-            .checkmark {
-              width: 34px;
-              height: 34px;
-              border: 1px solid #a0a0a0;
-              border-radius: 50%;
-              position: relative;
-              flex-shrink: 0;
-              box-sizing: border-box;
-
-              &::after {
-                content: "";
-                position: absolute;
-                display: none;
-                left: 50%;
-                top: 45%;
-                width: 8px;
-                height: 14px;
-                border: solid #000;
-                border-width: 0 2px 2px 0;
-                transform: translate(-50%, -50%) rotate(45deg);
-              }
-            }
-
-            span {
-              font-family: "HelveticaNeueCyr";
-              font-size: clamp(12px, 1.4vw, 16px);
-              color: #000000;
-              line-height: 1.2;
-            }
+          span {
+            font-family: "HelveticaNeueCyr";
+            font-size: clamp(12px, 1.4vw, 16px);
+            color: #000000;
+            line-height: 1.2;
           }
         }
       }

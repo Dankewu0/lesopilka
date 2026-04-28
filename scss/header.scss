@@ -33,7 +33,7 @@ header {
   ul {
     flex-wrap: wrap;
     display: flex;
-    gap: 33px;
+    gap: 32px;
     list-style: none;
 
     a {
@@ -59,6 +59,15 @@ header {
     height: 48px;
     color: white;
     text-decoration: none;
+  }
+
+  svg + h1,
+  img + h1 {
+    margin-left: 24px;
+  }
+
+  h1 + img {
+    margin-left: 56px;
   }
 
   @media (max-width: 768px) {

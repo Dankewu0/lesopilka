@@ -1,11 +1,12 @@
 .company {
-  min-height: 174px;
+  height: 174px;
   display: flex;
   align-items: center;
   overflow: hidden;
   width: 100%;
   max-width: 100%;
   min-width: 0;
+  padding: 67px 0;
 
   .company-track {
     display: flex;

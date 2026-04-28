@@ -103,7 +103,7 @@ header .container {
 header ul {
   flex-wrap: wrap;
   display: flex;
-  gap: 33px;
+  gap: 32px;
   list-style: none;
 }
 header ul a {
@@ -127,6 +127,13 @@ header .btn {
   height: 48px;
   color: white;
   text-decoration: none;
+}
+header svg + h1,
+header img + h1 {
+  margin-left: 24px;
+}
+header h1 + img {
+  margin-left: 56px;
 }
 @media (max-width: 768px) {
   header .burger {
@@ -212,13 +219,14 @@ header .btn {
 }
 
 .company {
-  min-height: 174px;
+  height: 174px;
   display: flex;
   align-items: center;
   overflow: hidden;
   width: 100%;
   max-width: 100%;
   min-width: 0;
+  padding: 67px 0;
 }
 .company .company-track {
   display: flex;
@@ -376,7 +384,7 @@ header .btn {
   z-index: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 33px;
   width: min(100%, 1266px);
 }
 .products-and-soluction .products-grid .project-card {
@@ -582,6 +590,7 @@ header .btn {
   font-size: clamp(12px, 4vw, 24px);
   font-weight: 400;
   text-transform: uppercase;
+  margin-bottom: 14px;
 }
 .history .container {
   display: flex;
@@ -630,10 +639,11 @@ header .btn {
   font-weight: 400;
   line-height: 1;
   text-transform: uppercase;
-  margin-bottom: clamp(40px, 5vw, 60px);
+  margin-bottom: 56px;
+  margin-left: clamp(1px, 8vw, 100px);
   width: 100%;
   max-width: calc(500px + clamp(20px, 3vw, 33px) * 3);
-  align-self: center;
+  align-self: start;
   text-align: left;
 }
 .team .cards {
@@ -651,8 +661,8 @@ header .btn {
   display: none;
 }
 .team .cards .team-card {
-  flex: 0 0 clamp(125px, 12vw, 250px);
-  max-width: clamp(125px, 12vw, 250px);
+  flex: 0 0 clamp(125px, 15vw, 250px);
+  max-width: clamp(125px, 15vw, 250px);
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
@@ -754,10 +764,12 @@ header .btn {
 .publication .card span {
   font-family: "Bebas Neue Cyrillic", sans-serif;
   font-size: 32px;
+  margin-top: 30px;
 }
 .publication .card p {
   font-family: "HelveticaNeueCyr", sans-serif;
   font-size: 16px;
+  margin-top: 16px;
 }
 .publication .card img {
   height: 439px;
@@ -1067,6 +1079,7 @@ header .btn {
   font-family: "HelveticaNeueCyr";
   flex: 1 1 400px;
   min-width: 0;
+  margin-left: 40px;
 }
 .start-project .content-wrapper .right-side .header-row {
   display: flex;
@@ -1099,8 +1112,11 @@ header .btn {
   gap: 23px;
   width: 100%;
 }
-.start-project .content-wrapper .right-side form input,
-.start-project .content-wrapper .right-side form textarea {
+.start-project .content-wrapper .right-side .header-row + form {
+  margin-top: 23px;
+}
+.start-project .content-wrapper .right-side input,
+.start-project .content-wrapper .right-side textarea {
   width: 100%;
   border-radius: 24px;
   border: none;
@@ -1110,27 +1126,27 @@ header .btn {
   font-size: clamp(18px, 2.5vw, 25px);
   color: #000;
 }
-.start-project .content-wrapper .right-side form input::placeholder,
-.start-project .content-wrapper .right-side form textarea::placeholder {
+.start-project .content-wrapper .right-side input::placeholder,
+.start-project .content-wrapper .right-side textarea::placeholder {
   color: #aaaaaa;
 }
-.start-project .content-wrapper .right-side form input {
+.start-project .content-wrapper .right-side input {
   height: clamp(56px, 8vw, 72px);
 }
-.start-project .content-wrapper .right-side form textarea {
+.start-project .content-wrapper .right-side textarea {
   height: clamp(120px, 15vw, 176px);
   resize: none;
   border: 1px solid transparent;
   background: linear-gradient(#fff, #fff) padding-box, linear-gradient(119.63deg, #7d9487 -7.35%, #fff 48.08%, #666 102.16%) border-box;
 }
-.start-project .content-wrapper .right-side form .controls-column {
+.start-project .content-wrapper .right-side .controls-column {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 23px;
   width: 100%;
 }
-.start-project .content-wrapper .right-side form .controls-column .submit-btn {
+.start-project .content-wrapper .right-side .controls-column .submit-btn {
   width: clamp(140px, 15vw, 160px);
   height: 49px;
   background: #cbf4f0 url("../public/button-bg.png") no-repeat;
@@ -1145,20 +1161,20 @@ header .btn {
   justify-content: center;
   line-height: 1;
 }
-.start-project .content-wrapper .right-side form .controls-column .agreement {
+.start-project .content-wrapper .right-side .controls-column .agreement {
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
   width: 100%;
 }
-.start-project .content-wrapper .right-side form .controls-column .agreement input {
+.start-project .content-wrapper .right-side .controls-column .agreement input {
   display: none;
 }
-.start-project .content-wrapper .right-side form .controls-column .agreement input:checked ~ .checkmark::after {
+.start-project .content-wrapper .right-side .controls-column .agreement input:checked ~ .checkmark::after {
   display: block;
 }
-.start-project .content-wrapper .right-side form .controls-column .agreement .checkmark {
+.start-project .content-wrapper .right-side .controls-column .agreement .checkmark {
   width: 34px;
   height: 34px;
   border: 1px solid #a0a0a0;
@@ -1167,7 +1183,7 @@ header .btn {
   flex-shrink: 0;
   box-sizing: border-box;
 }
-.start-project .content-wrapper .right-side form .controls-column .agreement .checkmark::after {
+.start-project .content-wrapper .right-side .controls-column .agreement .checkmark::after {
   content: "";
   position: absolute;
   display: none;
@@ -1179,7 +1195,7 @@ header .btn {
   border-width: 0 2px 2px 0;
   transform: translate(-50%, -50%) rotate(45deg);
 }
-.start-project .content-wrapper .right-side form .controls-column .agreement span {
+.start-project .content-wrapper .right-side .controls-column .agreement span {
   font-family: "HelveticaNeueCyr";
   font-size: clamp(12px, 1.4vw, 16px);
   color: #000000;
